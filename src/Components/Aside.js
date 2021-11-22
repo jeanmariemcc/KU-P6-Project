@@ -1,21 +1,23 @@
 import React from "react";
-// import "../App.css";
-// import "../index.css";
 
-// import links from "../Data/routes.json";
+import titles from "../Data/titles.json";
 // import { Link } from "react-router-dom";
-// import ListItem from "./ListItem";
+import ListItem from "./ListItem";
 
 class Aside extends React.Component {
 	render() {
-		// console.log(links);
+		// console.log(titles);
 		return (
-			// <aside className="Aside" style={{ position: "fixed" }}>
+			// using dummy Data
+			// we will need to read the database a pass an array of blog titles
+
 			<aside className="Aside">
 				<h4>Dr. Hartwig's Blog Articles</h4>
+
 				<ul>
-					<li>Link 1</li>
-					<li>Link 2</li>
+					{titles.map((title) => {
+						return <ListItem location={title} />;
+					})}
 				</ul>
 			</aside>
 		);
