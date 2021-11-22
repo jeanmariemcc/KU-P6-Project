@@ -210,7 +210,19 @@ h1 {
 .description {
 	word-wrap: break-word;
 	padding: 0.5%;
-	font-style: italic;
+	/* font-style: italic; */
+	/* border:1px solid blue; */
+	margin-bottom: 0.5%;
+	width: 95%;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.title {
+	word-wrap: break-word;
+	padding: 0.5%;
+	font-weight: bold;
+	/* font-style: italic; */
 	/* border:1px solid blue; */
 	margin-bottom: 0.5%;
 	width: 95%;
@@ -221,7 +233,7 @@ h1 {
 .Post div {
 	/* border:1px solid red; */
 	height: auto;
-	text-align: right;
+	/* text-align: right; */
 	margin-bottom: 0.5%;
 }
 
@@ -233,8 +245,11 @@ h1 {
 }
 
 .Post img {
-	width: 32px;
-	height: 32px;
+	float: left;
+	margin: 5px;
+}
+.Post p {
+	text-align: justify;
 }
 
 /* Post Styles */
