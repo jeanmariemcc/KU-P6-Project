@@ -19,7 +19,7 @@ class Create extends React.Component {
                     </div>
                    
                     <div className="form-control">
-                        <button type="submit">Register</button>
+                        <button type="submit">Create</button>
                     </div>
 				</form>
 			</main>

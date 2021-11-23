@@ -2,21 +2,21 @@
 
 @import url("https://fonts.googleapis.com/css?family=Indie+Flower&display=swap");
 * {
-	margin: 0;
-	padding: 0;
-	font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .App {
-	max-width: 100%;
-	margin: 0 auto;
+  max-width: 100%;
+  margin: 0 auto;
 }
 
 .Container {
-	margin-top: 19.5%;
-	padding: 0.5%;
-	/* border: 1px solid purple; */
-	margin-bottom: 0.1%;
+  margin-top: 19.5%;
+  padding: 0.5%;
+  /* border: 1px solid purple; */
+  margin-bottom: 0.1%;
 }
 
 /* App Styles*/
@@ -26,38 +26,38 @@
 /* Navigation Styles*/
 
 .Navigation {
-	width: 100%;
-	height: 22ch;
-	background-color: white;
-	color: black;
-	position: fixed;
-	top: 0;
-	border-bottom: 4px solid #111000;
+  width: 100%;
+  height: 22ch;
+  background-color: white;
+  color: black;
+  position: fixed;
+  top: 0;
+  border-bottom: 4px solid #111000;
 }
 
 .divcenter {
-	/* border: 2px solid lightblue; */
-	/* height: 100px; */
-	text-align: center;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  /* border: 2px solid lightblue; */
+  /* height: 100px; */
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .center {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	height: 14ch;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 14ch;
 }
 
 .instagramlogo {
-	width: 20px;
-	height: 20px;
-	/* position: relative; */
-	right: 200px;
-	/* padding: 35px; */
-	/* margin-left: 95%; */
+  width: 20px;
+  height: 20px;
+  /* position: relative; */
+  right: 200px;
+  /* padding: 35px; */
+  /* margin-left: 95%; */
 }
 
 /* Navigation Styles*/
@@ -67,82 +67,82 @@
 /* Link Styles */
 
 nav .listItem a {
-	color: black;
-	text-decoration: none;
+  color: black;
+  text-decoration: none;
 }
 
 footer .listItem a {
-	color: white;
-	text-decoration: none;
+  color: white;
+  text-decoration: none;
 }
 
 nav .listItem,
 footer .listItem {
-	display: inline-block;
-	height: auto;
-	margin-right: 2%;
-	cursor: pointer;
-	padding: 0.5%;
-	margin: 0.1%;
-	vertical-align: top;
+  display: inline-block;
+  height: auto;
+  margin-right: 2%;
+  cursor: pointer;
+  padding: 0.5%;
+  margin: 0.1%;
+  vertical-align: top;
 }
 
 footer .listItem:nth-child(1) {
-	margin-left: 1%;
+  margin-left: 1%;
 }
 
 nav .listItem {
-	padding: 2%;
-	margin-top: 1.5%;
-	border-top: 2px solid black;
+  padding: 2%;
+  margin-top: 1.5%;
+  border-top: 2px solid black;
 }
 
 footer .listItem:not(:last-child) {
-	padding: 2%;
-	margin-top: 1.5%;
-	border-bottom: 2px solid white;
+  padding: 2%;
+  margin-top: 1.5%;
+  border-bottom: 2px solid white;
 }
 
 nav .listItem:hover {
-	border-top: none;
-	/* border-bottom: 2px solid black; */
-	font-weight: bold;
-	background-color: #626366;
-	color: white;
+  border-top: none;
+  /* border-bottom: 2px solid black; */
+  font-weight: bold;
+  background-color: #626366;
+  color: white;
 }
 
 footer .listItem:hover {
-	border-bottom: none;
-	border-top: 2px solid white;
-	font-weight: bold;
+  border-bottom: none;
+  border-top: 2px solid white;
+  font-weight: bold;
 }
 
 aside .listItem {
-	display: block;
-	width: 98%;
-	border-left: 2px solid black;
-	border-right: 2px solid black;
-	margin-bottom: 11%;
-	height: 5vh;
-	text-align: center;
+  display: block;
+  width: 98%;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  margin-bottom: 11%;
+  height: 5vh;
+  text-align: center;
 }
 
 aside .listItem a {
-	color: black;
-	text-align: center;
-	text-decoration: none;
-	padding-top: 5%;
-	height: 60%;
-	display: block;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  padding-top: 5%;
+  height: 60%;
+  display: block;
 }
 
 aside .listItem:hover {
-	border-left: none;
-	border-right: none;
-	font-weight: bold;
-	border-top: 2px solid grey;
-	border-bottom: 2px solid grey;
-	color: black;
+  border-left: none;
+  border-right: none;
+  font-weight: bold;
+  border-top: 2px solid grey;
+  border-bottom: 2px solid grey;
+  color: black;
 }
 
 /* Link Styles */
@@ -151,60 +151,77 @@ aside .listItem:hover {
 
 /* Login/Register Styles */
 
-.Login, .Register, .Create {
-    width: 83%;
-    display: inline-block;
-    vertical-align: top;
-   }
-   .form-control {
-    width: 30%;
-    margin: 0 auto;
-    padding: 1%;
-    text-align: center;
-   }
-   label {
-    float: inline-end;
-    width: 30%;
-    text-align: right;
-   }
-   input {
-    text-align: center;
-    border:1px solid #234465;
-    padding: 1%;
-    width: 50%;
-    border-radius: 6px;
-    color: #234465;
-   }
-   form button {
-    width: auto;
-    padding: 2%;
-	background-color: #111000;
-	color: white
-   }
+.Login,
+.Register {
+  width: 83%;
+  display: inline-block;
+  vertical-align: top;
+}
+.form-control {
+  width: 30%;
+  margin: 0 auto;
+  padding: 1%;
+  text-align: center;
+}
+label {
+  float: left;
+  width: 30%;
+  text-align: right;
+  margin-right: 5%;
+}
+input {
+  border: 1px solid #234465;
+  padding: 1%;
+  width: 50%;
+  border-radius: 6px;
+  color: #234465;
+}
+form button {
+  width: auto;
+  padding: 2%;
+  background-color: #111000;
+  color: white;
+}
 
-   form button:hover {
-	   background-color: #626366;
-	   color: black;
-	   font-weight: bolder;
-   }
+form button:hover {
+  background-color: #626366;
+  color: black;
+  font-weight: bolder;
+}
 
-   form textarea {
-	   margin-left: -50%;
-	   height: 250px;
-	   width: 200%;
-   }
+/* ------------------------------------------------------------------------------- */
+
+/* Create Styles */
+
+.Create {
+  width: 83%;
+  display: inline-block;
+  vertical-align: top;
+}
+.form-control {
+  width: 30%;
+  margin: 0 auto;
+  padding: 1%;
+  text-align: center;
+}
+
+form textarea {
+  margin-left: -70%;
+  height: 250px;
+  width: 250%;
+}
 
 /* ------------------------------------------------------------------------------- */
 
 /* Aside Styles */
 
 .Aside {
-	display: inline-block;
-	width: 15%;
-	margin-right: 1%;
-	height: 89.5vh;
-	border: 1px solid grey;
-	vertical-align: top;
+  display: inline-block;
+  width: 15%;
+  margin-right: 1%;
+  height: 89.5vh;
+  border: 1px solid grey;
+  vertical-align: top;
 }
 
 /* Aside Styles */
@@ -214,18 +231,18 @@ aside .listItem:hover {
 /* Main Styles */
 
 .Main {
-	display: inline-block;
-	width: 83%;
-	height: auto;
-	border: 1px solid grey;
-	margin-bottom: 5%;
+  display: inline-block;
+  width: 83%;
+  height: auto;
+  border: 1px solid grey;
+  margin-bottom: 5%;
 }
 
 h1 {
-	text-align: center;
-	color: black;
-	text-decoration: underline;
-	margin-bottom: 2%;
+  text-align: center;
+  color: black;
+  text-decoration: underline;
+  margin-bottom: 2%;
 }
 
 /* Main Styles */
@@ -235,9 +252,9 @@ h1 {
 /* Posts Styles */
 
 .Posts {
-	width: 100%;
-	/* border:1px solid red; */
-	height: 45vh;
+  width: 100%;
+  /* border:1px solid red; */
+  height: 45vh;
 }
 
 /* Posts Styles */
@@ -247,56 +264,56 @@ h1 {
 /* Post Styles */
 
 .Post {
-	width: 100%;
-	height: auto;
-	border: 1px solid #234465;
-	margin-bottom: 3%;
-	border-radius: 4px;
+  width: 100%;
+  height: auto;
+  border: 1px solid #234465;
+  margin-bottom: 3%;
+  border-radius: 4px;
 }
 
 .description {
-	word-wrap: break-word;
-	padding: 0.5%;
-	/* font-style: italic; */
-	/* border:1px solid blue; */
-	margin-bottom: 0.5%;
-	width: 95%;
-	display: inline-block;
-	vertical-align: top;
+  word-wrap: break-word;
+  padding: 0.5%;
+  /* font-style: italic; */
+  /* border:1px solid blue; */
+  margin-bottom: 0.5%;
+  width: 95%;
+  display: inline-block;
+  vertical-align: top;
 }
 
 .title {
-	word-wrap: break-word;
-	padding: 0.5%;
-	font-weight: bold;
-	/* font-style: italic; */
-	/* border:1px solid blue; */
-	margin-bottom: 0.5%;
-	width: 95%;
-	display: inline-block;
-	vertical-align: top;
+  word-wrap: break-word;
+  padding: 0.5%;
+  font-weight: bold;
+  /* font-style: italic; */
+  /* border:1px solid blue; */
+  margin-bottom: 0.5%;
+  width: 95%;
+  display: inline-block;
+  vertical-align: top;
 }
 
 .Post div {
-	/* border:1px solid red; */
-	height: auto;
-	/* text-align: right; */
-	margin-bottom: 0.5%;
+  /* border:1px solid red; */
+  height: auto;
+  /* text-align: right; */
+  margin-bottom: 0.5%;
 }
 
 .Post div span {
-	text-decoration: underline;
-	text-align: right;
-	/* border:1px solid green; */
-	padding-right: 1%;
+  text-decoration: underline;
+  text-align: right;
+  /* border:1px solid green; */
+  padding-right: 1%;
 }
 
 .Post img {
-	float: left;
-	margin: 5px;
+  float: left;
+  margin: 5px;
 }
 .Post p {
-	text-align: justify;
+  text-align: justify;
 }
 
 /* Post Styles */
@@ -304,42 +321,42 @@ h1 {
 /* Footer Styles */
 
 .Footer {
-	width: 100%;
-	font-family: Arial, Helvetica, sans-serif;
-	background-color: #354161;
-	color: white;
-	/* border-top: 2px solid #234465; */
-	/* border-bottom: 2px solid #234465; */
-	margin-bottom: 1%;
-	bottom: 0px;
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #354161;
+  color: white;
+  /* border-top: 2px solid #234465; */
+  /* border-bottom: 2px solid #234465; */
+  margin-bottom: 1%;
+  bottom: 0px;
 }
 
 .Footer p {
-	text-align: center;
+  text-align: center;
 }
 
 .Footer h2 {
-	text-align: center;
-	text-decoration: underline;
+  text-align: center;
+  text-decoration: underline;
 }
 
 #parent {
-	display: flex;
-	justify-content: space-around;
+  display: flex;
+  justify-content: space-around;
 }
 
 #left {
-	/* border: 1px solid lightgray; */
-	background-color: #354161;
-	width: 48%;
-	float: left;
+  /* border: 1px solid lightgray; */
+  background-color: #354161;
+  width: 48%;
+  float: left;
 }
 
 #right {
-	/* border: 1px solid lightgray; */
-	background-color: #354161;
-	width: 48%;
-	float: right;
+  /* border: 1px solid lightgray; */
+  background-color: #354161;
+  width: 48%;
+  float: right;
 }
 
 /* Footer Styles */

@@ -3,7 +3,7 @@ const models = require('../models');
 module.exports = {
     get: (req, res, next) => {
         models.Articles.find()
-            .then((origamies) => res.send(origamies))
+            .then((articles) => res.send(articles))
             .catch(next);
     },
 
@@ -12,14 +12,14 @@ module.exports = {
         const { _id } = req.user;
 
         models.Articles.create({ description, author: _id })
-            .then((createdOrigami) => {
+            .then((createdArticles) => {
                 return Promise.all([
-                    models.User.updateOne({ _id }, { $push: { posts: createdOrigami } }),
-                    models.Origami.findOne({ _id: createdOrigami._id })
+                    models.User.updateOne({ _id }, { $push: { posts: createdArticles } }),
+                    models.Articles.findOne({ _id: createdArticles._id })
                 ]);
             })
-            .then(([modifiedObj, origamiObj]) => {
-                res.send(origamiObj);
+            .then(([modifiedObj, articlesObj]) => {
+                res.send(articlesObj);
             })
             .catch(next);
     },
@@ -28,14 +28,14 @@ module.exports = {
         const id = req.params.id;
         const { description } = req.body;
         models.Articles.updateOne({ _id: id }, { description })
-            .then((updatedOrigami) => res.send(updatedOrigami))
+            .then((updatedArticle) => res.send(updatedArticle))
             .catch(next)
     },
 
     delete: (req, res, next) => {
         const id = req.params.id;
         models.Articles.deleteOne({ _id: id })
-            .then((removedOrigami) => res.send(removedOrigami))
+            .then((removedArticle) => res.send(removedArticle))
             .catch(next)
     }
 };
