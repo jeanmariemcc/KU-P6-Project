@@ -5,7 +5,7 @@ import OnePost from "./OnePost";
 class AllPosts extends React.Component {
 	render() {
 		let limit;
-		if (this.props.limit != undefined) {
+		if (this.props.limit !== undefined) {
 			limit = Number(this.props.limit);
 		}
 		console.log(limit);
