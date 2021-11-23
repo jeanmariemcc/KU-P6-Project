@@ -19,7 +19,7 @@ class Login extends React.Component {
                     </div>
                    
                     <div className="form-control">
-                        <button type="submit">Register</button>
+                        <button type="submit">Login</button>
                     </div>
                 </form>
 			</main>
