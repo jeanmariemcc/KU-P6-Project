@@ -6,7 +6,7 @@ class Create extends React.Component {
 		// console.log(links);
 		return (
 			<main className="Main">
-				<h1>Create Route</h1>
+				<h1>Create Article</h1>
 				<form>
 				<div className="form-control">
                         <label for="text">Title</label>
