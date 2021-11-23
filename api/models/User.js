@@ -4,11 +4,11 @@ const saltRounds = 10;
 
 const Schema = mongoose.Schema;
 const Model = mongoose.model;
-const { String, Number, Boolean, ObjectId } = Schema.Types;
+const { String, ObjectId } = Schema.Types;
 
 const userSchema = new Schema({
 
-    email: {
+    username: {
         type: String,
         unique: true,
         required: true
@@ -19,7 +19,7 @@ const userSchema = new Schema({
         require: true
     },
 
-    posts: [{ type: ObjectId, ref: "Atlas" }]
+    posts: [{ type: ObjectId, ref: "Articles" }]
 
 });
 
