@@ -185,6 +185,7 @@ aside .listItem:hover {
    form button:hover {
 	   background-color: #626366;
 	   color: black;
+	   font-weight: bolder;
    }
 
 /* ------------------------------------------------------------------------------- */
