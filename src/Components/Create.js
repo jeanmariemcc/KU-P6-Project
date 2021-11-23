@@ -7,9 +7,23 @@ class Create extends React.Component {
 		return (
 			<main className="Main">
 				<h1>Create Route</h1>
-				{/* <Posts /> */}
+				<form>
+				<div className="form-control">
+                        <label for="text">Title</label>
+                        <input name="title" type="text"/>
+                    </div>
+                    
+                    <div className="form-control">
+                        <label for="description">Content</label>
+                        <textarea name="description"></textarea>
+                    </div>
+                   
+                    <div className="form-control">
+                        <button type="submit">Register</button>
+                    </div>
+				</form>
 			</main>
-		);
+		)
 	}
 }
 

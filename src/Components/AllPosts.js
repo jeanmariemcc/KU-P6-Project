@@ -27,7 +27,7 @@ class AllPosts extends React.Component {
 						}
 					})}
 				</div>
-				); }
+				); 
 			</main>
 		);
 	}
