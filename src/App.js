@@ -9,7 +9,7 @@ import Logout from "./Components/Logout";
 import AllPosts from "./Components/AllPosts";
 
 // import { BrowserRouter } from "react-router-dom"; //don't need this because it is in index.js
-import { Route, Link } from "react-router-dom";
+import { Route } from "react-router-dom";
 import { Routes } from "react-router-dom";
 
 function App() {
