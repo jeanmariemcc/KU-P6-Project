@@ -11,15 +11,15 @@ module.exports = {
 
     post: {
         register: (req, res, next) => {
-            const { username, password } = req.body;
-            models.Users.create({ username, password })
+            const { email, password } = req.body;
+            models.Users.create({ email, password })
                 .then((createdUsers) => res.send(createdUsers))
                 .catch(next)
         },
 
         login: (req, res, next) => {
-            const { username, password } = req.body;
-            models.Users.findOne({ username })
+            const { email, password } = req.body;
+            models.Users.findOne({ email })
                 .then((user) => Promise.all([user, user.matchPassword(password)]))
                 .then(([user, match]) => {
                     if (!match) {
@@ -48,8 +48,8 @@ module.exports = {
 
     put: (req, res, next) => {
         const id = req.params.id;
-        const { username, password } = req.body;
-        models.Users.update({ _id: id }, { username, password })
+        const { email, password } = req.body;
+        models.Users.update({ _id: id }, { email, password })
             .then((updatedUser) => res.send(updatedUser))
             .catch(next)
     },

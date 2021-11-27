@@ -2,9 +2,9 @@ const router = require('../routes/');
 
 module.exports = (app) => {
 
-    app.use('/api/users', router.user);
+    app.use('/api/users', router.users);
 
-    app.use('/api/articles', router.origami);
+    app.use('/api/articles', router.articles);
 
     app.use('*', (req, res, next) => res.send('<h1> Something went wrong. Try again. :thumbsup: </h1>'))
 };
