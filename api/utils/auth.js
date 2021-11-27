@@ -14,7 +14,7 @@ module.exports = (redirectAuthenticated = true) => {
             .then(([data, blacklistToken]) => {
                 if (blacklistToken) { return Promise.reject(new Error('blacklisted token')) }
 
-                models.User.findById(data.id)
+                models.Users.findById(data.id)
                     .then((user) => {
                         req.user = user;
                         next();
