@@ -9,7 +9,7 @@ function loginHelper(state){
 			},
 			body: data 
 		  }
-		return fetch("http://localhost:9999/api/user/login",resources).then(res=>{
+		return fetch("http://localhost:9999/api/users/login",resources).then(res=>{
 			//console.log(res.status);
 			return res.json()
 		})

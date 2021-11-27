@@ -2,7 +2,7 @@ const router = require('../routes/');
 
 module.exports = (app) => {
 
-    app.use('/api/user', router.user);
+    app.use('/api/users', router.user);
 
     app.use('/api/articles', router.articles);
 

@@ -12,7 +12,8 @@ import AllPosts from "./Components/AllPosts";
 import { Route } from "react-router-dom";
 import { Routes } from "react-router-dom";
 
-function App() {
+function App(props) {
+
 	return (
 		<div className="App Container">
 			<Aside />
@@ -20,7 +21,9 @@ function App() {
 				<Route path="/" exact element={<Main />} />
 				<Route path="/create" element={<Create />} />
 				<Route path="/register" element={<Register />} />
-				<Route path="/login" element={<Login />} />
+				<Route 
+					path="/login" 
+					element={<Login />} />
 				<Route path="/logout" element={<Logout />} />
 				<Route path="/allposts" element={<AllPosts />} />
 				{/* <Route */}

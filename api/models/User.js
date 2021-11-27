@@ -19,6 +19,8 @@ const userSchema = new Schema({
         require: true
     },
 
+    admin: false,
+
     posts: [{ type: ObjectId, ref: "Articles" }]
 
 });

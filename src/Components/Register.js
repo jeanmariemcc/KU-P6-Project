@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from 'react';
 
 function isNewUser(email){
-	const userURL = "http://localhost:9999/api/user/"
+	const userURL = "http://localhost:9999/api/users/"
 	return fetch(userURL).then(res=>res.json()).then(users=>{
 		let hasUser = users.find(user=> {
 			return user.email === email;
@@ -15,7 +15,7 @@ function isNewUser(email){
 	})
 }
 function registerUser(email,password){   
-	const url ="http://localhost:9999/api/user/register"
+	const url ="http://localhost:9999/api/users/register"
 	let data = JSON.stringify({
 		email,password
 	})
