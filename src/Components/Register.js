@@ -14,7 +14,7 @@ function isNewUser(email){
 		return false;
 	})
 }
-function registerUser(email,password){   
+function registerUser(email,password,){   
 	const url ="http://localhost:9999/api/users/register"
 	let data = JSON.stringify({
 		email,password

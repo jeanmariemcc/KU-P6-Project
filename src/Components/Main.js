@@ -1,6 +1,11 @@
 import React from "react";
+<<<<<<< Updated upstream
 import posts from "../Data/posts.json";
 import OnePost from "./OnePost";
+=======
+import AllPosts from "./AllPosts";
+// import Posts from "./Posts";
+>>>>>>> Stashed changes
 
 class Main extends React.Component {
 	render() {
@@ -11,6 +16,7 @@ class Main extends React.Component {
 		console.log(limit);
 		return (
 			<main className="Main">
+<<<<<<< Updated upstream
 				<h1>All Blog Posts</h1>
 				{/* <Posts /> */}
 				<div className="Posts">
@@ -28,6 +34,10 @@ class Main extends React.Component {
 					})}
 				</div>
 				);
+=======
+				<h1>Latest articles</h1>
+				<AllPosts />
+>>>>>>> Stashed changes
 			</main>
 		);
 	}

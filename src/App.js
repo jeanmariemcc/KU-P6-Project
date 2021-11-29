@@ -20,7 +20,13 @@ function App(props) {
 				<Route path="/" exact element={<Main />} />
 				<Route path="/create" element={<Create />} />
 				<Route path="/register" element={<Register />} />
+<<<<<<< Updated upstream
 				<Route path="/login" element={<Login />} />
+=======
+				<Route 
+					path="/login" 
+					element={<Login updateLogin={props.updateLogin}/>} />
+>>>>>>> Stashed changes
 				<Route path="/logout" element={<Logout />} />
 				<Route path="/allposts" exact element={<Main />} />
 				{/* <Route */}

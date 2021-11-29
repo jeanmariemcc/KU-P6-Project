@@ -5,9 +5,10 @@ import loginHelper from "../Helpers/loginHelper";
 class Login extends React.Component {
 	constructor(props){
 		super(props);
-		this.state ={
+		this.state = {
 			email:'',
-			password:''
+			password:'',
+			admin: false
 		}
 		this.changeHandler = this.changeHandler.bind(this);
 		this.submitHandler = this.submitHandler.bind(this);
@@ -22,20 +23,22 @@ class Login extends React.Component {
 		}
 	}
 	submitHandler(event) {
+		//fetch api
 		loginHelper(this.state)
 		.then(data=>{
 			console.log(data);
-			document.cookie = `x-auth-token=`+JSON.stringify(data.token);
-			document.cookie = `user={"email":"${data.user.email}"}`
+			document.cookie = `x-auth-token=`+ JSON.stringify(data.token);
+			document.cookie = `user={"email":"${data.user.email}","admin":${data.user.admin}}`
 			//console.log(data.user.posts)
-			// this.props.updateLogin({
-			// 	loggedin: data.token,
-			// 	email: data.user.email
-			// })
+			//add the updateLogin function
+			this.props.updateLogin({
+				loggedin: data.token,
+				email: data.user.email,
+				admin: data.admin
+			})
 		})
 		
-		//add the updateLogin function
-		//need to save the email and the # of posts from the user
+		//need to save the email
 		event.preventDefault();
 		// Doing some AJAX with the data...
 		//run the updateLogin method
