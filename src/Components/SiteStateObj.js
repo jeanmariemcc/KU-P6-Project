@@ -10,7 +10,8 @@ class LoginCheck extends React.Component {
 		let cookies =document.cookie.split("; ")// ["cookiename= value",'cookiename= value']
 		let login = false;
 		let user = {
-			username: ""
+			username: "",
+			admin: false
 		};
 		if(cookies.length>1){
 			login = cookies.find((cookie)=>{
@@ -27,9 +28,10 @@ class LoginCheck extends React.Component {
 		//console.log(document.cookie)
 		
 		this.state = {
-			loggedin: (login)?true:false,
+			loggedin: (login) ? true : false,
 			email: user.email,
-			token: login
+			token: login,
+			admin: user.admin
 		};
 		this.updateLogin = this.updateLogin.bind(this);
 	}
@@ -40,22 +42,23 @@ class LoginCheck extends React.Component {
 			user = logInfo;
 		}
 		this.setState(() => {
-			if (user) {
-				
+			if (user) {	
 				return {
 					loggedin: (user.loggedin) ? true : false,
 					email: user.email,
-					token: user.loggedin
+					token: user.loggedin,
+					admin: user.admin
 				};
 			} else {
 				return {
 					loggedin: false,
 					username: "",
 					token: "",
+					admin:""
 				};
 			}
 		});
-		console.log(this.state);
+		//console.log(this.state);
 	}
 
 	render() {

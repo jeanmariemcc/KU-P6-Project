@@ -4,9 +4,12 @@ const cors = require('cors');
 const secret = 'secret';
 
 module.exports = (app) => {
-    app.use(cors({
+    app.use("/", cors({
+        origin:["http://localhost:3000"],
+        methods: "POST",
         credentials: true,
-        exposedHeaders: "Set-Cookie"
+        exposedHeaders: "Set-Cookie",
+        maxAge: 86400
     }));
 
     app.use(bodyParser.urlencoded({

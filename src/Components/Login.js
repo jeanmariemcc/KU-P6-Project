@@ -36,6 +36,7 @@ class Login extends React.Component {
 				email: data.user.email,
 				admin: data.admin
 			})
+			console.log(this.props);
 		})
 		
 		//need to save the email
@@ -48,7 +49,7 @@ class Login extends React.Component {
 	render() {
 		//console.log(links);
 		const {email,password} = this.state
-		//console.log(this.state)
+		console.log(this.state)
 		return (
 			<main className="Login">
 				<h1>Login Page</h1>

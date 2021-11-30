@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 // import ListItem from "./ListItem";
 
 function LoggedInNav(props) {
+	console.log(props);
   return (
     <nav className="Navigation">
       <div>
@@ -46,6 +47,7 @@ function LoggedInNav(props) {
 }
 
 function AdminLoggedIn(props) {
+	console.log(props);
   return (
     <nav className="Navigation">
       <div>
@@ -130,10 +132,13 @@ function LoggedOutNav(props) {
 }
 
 function Nav(props) {
+  const loggedIn = props.loggedin;
+  const admin = props.admin;
+  	
   // TODO fetch first 11 posts to get the links to the page
-  if (props.loggedin) {
+  if (loggedIn) {
     return <LoggedInNav />;
-  } else if (props.loggedin && props.admin) {
+  } else if (loggedIn && admin) {
     return <AdminLoggedIn />;
   } else {
     return <LoggedOutNav />;
