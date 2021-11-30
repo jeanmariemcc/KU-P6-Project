@@ -4,14 +4,15 @@ function OnePost(props) {
 	return (
 		<div className="Post">
 			<h3>{props.title}</h3>
+			<h6>Updated on: {props.created}</h6>
 			<img
-				src={props.image}
+				src={props.imageURL}
 				alt="article idea"
 				align="left"
 				// width="500"
 				height="50"
 			></img>
-			<p>{props.text}</p>
+			<p>{props.description}</p>
 		</div>
 	);
 }

@@ -1,24 +1,37 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const Model = mongoose.model;
-const { String, Number, Boolean, ObjectId } = Schema.Types;
+const { String, Number, Boolean, ObjectId, Date } = Schema.Types;
 
 const articleSchema = new Schema({
+	description: {
+		type: String,
+		required: true,
+	},
 
-    description: {
-        type: String,
-        required: true,
-    },
+	imageURL: {
+		type: String,
+		required: true,
+	},
 
-    imageURL: {
-        type: String
-    },
+	title: {
+		type: String,
+		required: true,
+	},
 
-    author: {
-        type: ObjectId,
-        ref: "User"
-    }
-
+	created: { type: Date, default: Date.now, required: true },
+	// created: {
+	// 	type: Date,
+	// 	default:
+	// 		this.today.getDate() +
+	// 		" / " +
+	// 		(this.today.getMonth() + 1) +
+	// 		" / " +
+	// 		this.today.getFullYear(),
+	// 	required: true,
+	// },
 });
 
-module.exports = new Model('Articles', articleSchema);
+module.exports = new Model("Articles", articleSchema);
+
+// today: new Date(),

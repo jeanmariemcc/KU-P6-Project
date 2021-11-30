@@ -13,42 +13,49 @@ import { Route } from "react-router-dom";
 import { Routes } from "react-router-dom";
 
 function App(props) {
-const loggedIn = props.user.loggedin;
-const notLoggedIn = !props.user.loggedin;
-console.log(loggedIn);
-console.log(notLoggedIn);
+	const loggedIn = props.user.loggedin;
+	const notLoggedIn = !props.user.loggedin;
+	console.log(loggedIn);
+	console.log(notLoggedIn);
 
 	return (
 		<div className="App Container">
 			<Aside />
 			<Routes>
-				<Route path="/" exact element={<Main updateLogin={props.updateLogin}/>} />
-				<Route path="/create" element={<Create updateLogin={props.updateLogin}/>} />
-				<Route 
+				<Route
+					path="/"
+					exact
+					element={<Main updateLogin={props.updateLogin} />}
+				/>
+				<Route
+					path="/create"
+					element={<Create updateLogin={props.updateLogin} />}
+				/>
+				<Route
 					path="/register"
 					element={
-						<PrivateRoute 
-							isAuth = {notLoggedIn}
+						<PrivateRoute
+							isAuth={notLoggedIn}
 							path="register"
 							redirectTo="/login"
 						>
 							<Register />
-						</PrivateRoute> 
+						</PrivateRoute>
 					}
 				/>
-				<Route 
-					path="/login" 
+				<Route
+					path="/login"
 					element={
 						<PrivateRoute
 							isAuth={notLoggedIn}
 							path="login"
 							redirectTo="/"
-							>
-						<Login updateLogin={props.updateLogin}/>
+						>
+							<Login updateLogin={props.updateLogin} />
 						</PrivateRoute>
 					}
 				/>
-				<Route 
+				<Route
 					path="/logout"
 					element={
 						<PrivateRoute
@@ -56,11 +63,11 @@ console.log(notLoggedIn);
 							path="logout"
 							redirectTo="/"
 						>
-						<Logout updateLogin={props.updateLogin}/>
+							<Logout updateLogin={props.updateLogin} />
 						</PrivateRoute>
 					}
 				/>
-				<Route path="/allposts" exact element={<Main />} />
+				{/* <Route path="/allposts" exact element={<Main />} /> */}
 				{/* <Route */}
 				{/* path="/profile" */}
 				{/* element={<Profile email="test@test.com" numPosts="4" />} */}

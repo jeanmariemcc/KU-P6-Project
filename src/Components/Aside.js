@@ -1,7 +1,7 @@
 import React from "react";
 
 import titles from "../Data/titles.json";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import ListItem from "./ListItem";
 
 class Aside extends React.Component {
@@ -15,8 +15,11 @@ class Aside extends React.Component {
 				<h4>Dr. Hartwig's Blog Articles</h4>
 
 				<ul>
+					<li className="listItem">
+						<Link to="create">Create</Link>
+					</li>
 					{titles.map((title) => {
-						return <ListItem location={title} />;
+						return <ListItem key={title} location={title} />;
 					})}
 				</ul>
 			</aside>
