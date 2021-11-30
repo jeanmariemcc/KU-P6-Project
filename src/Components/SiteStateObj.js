@@ -55,13 +55,14 @@ class LoginCheck extends React.Component {
 				};
 			}
 		});
+		console.log(this.state);
 	}
 
 	render() {
 		console.log(this.state);
 		return (
 			<div>
-				<Nav loggedin={this.state.loggedin} />
+				<Nav loggedin={this.state.loggedin} updateLogin={this.updateLogin} />
 
 				<App
 					user={this.state}

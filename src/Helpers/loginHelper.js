@@ -10,7 +10,6 @@ function loginHelper(state){
 			body: data 
 		  }
 		return fetch("http://localhost:9999/api/users/login",resources).then(res=>{
-			
 			return res.json()
 		})
 }

@@ -6,6 +6,7 @@ function isNewUser(email){
 	const userURL = "http://localhost:9999/api/users/"
 	return fetch(userURL).then(res=>res.json()).then(users=>{
 		let hasUser = users.find(user=> {
+			console.log(user.email);
 			return user.email === email;
 		});
 		if(hasUser=== undefined){
@@ -14,10 +15,12 @@ function isNewUser(email){
 		return false;
 	})
 }
-function registerUser(email,password,){   
+function registerUser(email,password){   
 	const url ="http://localhost:9999/api/users/register"
 	let data = JSON.stringify({
-		email,password
+		email,
+		password,
+		admin: false
 	})
 	let resources = {
 		method: "POST",
@@ -26,9 +29,8 @@ function registerUser(email,password,){
 		},
 		body: data,
 	};
+	console.log(data);
 	return fetch(url,resources).then(res=>res.json())
-
-
 }
 
 function Register(props) {

@@ -29,7 +29,7 @@ module.exports = {
                     console.log("logged In!");
                     const token = utils.jwt.createToken({ id: user._id });
                     res.setHeader('Access-Control-Allow-Origin', '*');
-                    res.cookie(config.authCookieName, token, {maxAge: 9000000000, httpOnly: true, secure: true, }).send({user, token});
+                    res.cookie(config.authCookieName, token, {maxAge: 9000000000, httpOnly: true, SameSite: true}).send({user, token});
                 })
                 .catch(next);
         },
@@ -41,7 +41,7 @@ module.exports = {
             console.log('-'.repeat(100));
             models.TokenBlacklist.create({ token })
                 .then(() => {
-                    res.clearCookie(config.authCookieName).send('Logout successfully!');
+                    res.clearCookie(config.authCookieName).send({message: 'Logout successfully!'});
                 })
                 .catch(next);
         }

@@ -16,10 +16,12 @@ const userSchema = new Schema({
 
     password: {
         type: String,
-        require: true
+        required: true
     },
 
-    posts: [{ type: ObjectId, ref: "Users" }]
+    admin: {
+        type: Boolean
+    }
 
 });
 
@@ -45,4 +47,4 @@ userSchema.pre('save', function (next) {
     next();
 });
 
-module.exports = new Model('User', userSchema);
+module.exports = new Model('Users', userSchema);
