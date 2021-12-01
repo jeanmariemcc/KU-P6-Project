@@ -3,8 +3,6 @@ const router = require("../routes/");
 module.exports = (app) => {
 	app.use("/atlas/users", router.users);
 
-	app.use("/api/users", router.users);
-
 	app.use("/atlas/articles", router.articles);
 
 	app.use("*", (req, res, next) =>

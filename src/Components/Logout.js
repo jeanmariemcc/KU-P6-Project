@@ -15,7 +15,7 @@ function logout() {
 		},
 		body: "",
 	};
-	return fetch("http://localhost:9999/api/users/logout", resources).then(
+	return fetch("http://localhost:9999/atlas/users/logout", resources).then(
 		(res) => {
 			console.log(res.status);
 			console.log(res.body);
