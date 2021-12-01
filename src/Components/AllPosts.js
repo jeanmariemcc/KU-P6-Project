@@ -31,7 +31,7 @@ class AllPosts extends React.Component {
 		if (this.props.limit !== undefined) {
 			limit = Number(this.props.limit);
 		}
-		// console.log(limit);
+		console.log(limit);
 		let { posts } = this.state;
 		console.log(posts);
 		return (

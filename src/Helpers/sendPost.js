@@ -1,6 +1,6 @@
 function sendPost(description, title, imageURL, dateCreated) {
 	const url = "http://localhost:9999/atlas/articles/";
-	console.log(`dateCreated in sendPost.js ${dateCreated}`);
+	console.log(`dateCreated passed to sendPost.js ${dateCreated}`);
 	let data = JSON.stringify({
 		description,
 		title,

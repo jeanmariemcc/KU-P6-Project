@@ -1,6 +1,10 @@
-function getPosts(limit = 0) {
-	limit = Number(limit);
-	let url = "http://localhost:9999/atlas/articles/";
+function getPosts(articleID) {
+	let url = "";
+	if (!articleID) {
+		url = "http://localhost:9999/atlas/articles/";
+	} else {
+		url = "http://localhost:9999/atlas/articles/" + articleID;
+	}
 	return fetch(url).then((res) => {
 		// let allarticles = res.json();
 		// console.log(allarticles);
