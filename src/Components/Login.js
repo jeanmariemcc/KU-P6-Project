@@ -37,6 +37,9 @@ class Login extends React.Component {
 				admin: data.admin
 			})
 			console.log(this.props);
+			if (data.user.admin === true) {
+				window.location.reload(true);
+			} 
 		})
 		
 		//need to save the email

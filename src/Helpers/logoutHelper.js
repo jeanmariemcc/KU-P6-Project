@@ -13,7 +13,7 @@ function logoutHelper(){
         },
         body: ""
     }
-    return fetch("http://localhost:9999/api/users/logout", resources).then(res=>{
+    return fetch("http://localhost:9999/atlas/users/logout", resources).then(res=>{
         console.log(res.status);
         console.log(res.body);
         return res.json();

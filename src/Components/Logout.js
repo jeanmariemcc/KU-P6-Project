@@ -1,3 +1,5 @@
+import cookie from "react-cookies";
+
 function logout() {
 	let cookies = document.cookie.split("; ");
 	let token = cookies
@@ -15,7 +17,7 @@ function logout() {
 		},
 		body: "",
 	};
-	return fetch("http://localhost:9999/api/users/logout", resources).then(
+	return fetch("http://localhost:9999/atlas/users/logout", resources).then(
 		(res) => {
 			console.log(res.status);
 			console.log(res.body);
@@ -44,6 +46,8 @@ function Logout(props){
 								email: "",
 								admin: ""
 							})
+							cookie.remove("x-auth-token");
+							cookie.remove("user");
 						})
 					}}>Logout</button>
 				</p>

@@ -15,12 +15,13 @@ import { Routes } from "react-router-dom";
 function App(props) {
 	const loggedIn = props.user.loggedin;
 	const notLoggedIn = !props.user.loggedin;
+	let admin = props.user.admin;
 	console.log(loggedIn);
 	console.log(notLoggedIn);
 
 	return (
 		<div className="App Container">
-			<Aside />
+			<Aside updateLogin={props.updateLogin} admin={admin}/>
 			<Routes>
 				<Route
 					path="/"
@@ -29,7 +30,7 @@ function App(props) {
 				/>
 				<Route
 					path="/create"
-					element={<Create updateLogin={props.updateLogin} />}
+					element={<Create updateLogin={props.updateLogin} admin={admin} />}
 				/>
 				<Route
 					path="/register"
