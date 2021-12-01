@@ -1,3 +1,5 @@
+import cookie from "react-cookies";
+
 function logout() {
 	let cookies = document.cookie.split("; ");
 	let token = cookies
@@ -44,6 +46,8 @@ function Logout(props){
 								email: "",
 								admin: ""
 							})
+							cookie.remove("x-auth-token");
+							cookie.remove("user");
 						})
 					}}>Logout</button>
 				</p>
