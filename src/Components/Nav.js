@@ -134,13 +134,13 @@ function LoggedOutNav(props) {
 function Nav(props) {
   const loggedIn = props.loggedin;
   const admin = props.admin;
-  	
+  
   // TODO fetch first 11 posts to get the links to the page
-  if (loggedIn) {
-    return <LoggedInNav />;
-  } else if (loggedIn && admin) {
+  if (loggedIn && admin) {
     return <AdminLoggedIn />;
-  } else {
+  } else if (loggedIn) {
+    return <LoggedInNav />;
+  }else {
     return <LoggedOutNav />;
   }
 }
