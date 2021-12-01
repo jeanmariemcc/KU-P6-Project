@@ -18,18 +18,10 @@ const articleSchema = new Schema({
 		type: String,
 		required: true,
 	},
-
-	created: { type: Date, default: Date.now, required: true },
-	// created: {
-	// 	type: Date,
-	// 	default:
-	// 		this.today.getDate() +
-	// 		" / " +
-	// 		(this.today.getMonth() + 1) +
-	// 		" / " +
-	// 		this.today.getFullYear(),
-	// 	required: true,
-	// },
+	dateCreated: {
+		type: String,
+	},
+	// dateCreated: { type: Date, default: Date.now },
 });
 
 module.exports = new Model("Articles", articleSchema);

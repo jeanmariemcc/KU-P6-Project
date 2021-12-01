@@ -11,6 +11,7 @@ class AllPosts extends React.Component {
 		};
 		this.addPosts = (data) => {
 			this.setState(() => {
+				// console.log(data);
 				return {
 					posts: data,
 				};
@@ -32,6 +33,7 @@ class AllPosts extends React.Component {
 		}
 		// console.log(limit);
 		let { posts } = this.state;
+		console.log(posts);
 		return (
 			<main className="Main">
 				<h1>Summary of All Blog Posts</h1>
@@ -47,17 +49,17 @@ class AllPosts extends React.Component {
 						shortDesc = shortDesc + " ...";
 						return (
 							<OnePost
+								id={post._id}
 								key={index}
 								description={shortDesc}
 								title={post.title}
 								imageURL={post.imageURL}
-								created={post.created}
+								dateCreated={post.dateCreated}
 							/>
 						);
 						// }
 					})}
 				</div>
-				{/* ); */}
 			</main>
 		);
 	}

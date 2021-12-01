@@ -8,10 +8,13 @@ module.exports = {
 	},
 
 	post: (req, res, next) => {
+		const dateCreated = new Date().toLocaleDateString();
 		const { description, title, imageURL } = req.body;
 		console.log(req.body);
 
-		models.Articles.create({ description, imageURL, title })
+		console.log(`articles.js dateCreated ${dateCreated}`);
+
+		models.Articles.create({ description, imageURL, title, dateCreated })
 			.then((createdArticle) => res.send(createdArticle))
 			.catch(next);
 	},
