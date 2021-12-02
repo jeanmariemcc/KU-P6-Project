@@ -1,4 +1,5 @@
 function getPosts(articleID) {
+	console.log(`getPosts articleID ${articleID}`);
 	let url = "";
 	if (!articleID) {
 		url = "http://localhost:9999/atlas/articles/";
