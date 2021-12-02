@@ -47,7 +47,6 @@ function LoggedInNav(props) {
 }
 
 function AdminLoggedIn(props) {
-	console.log(props);
   return (
     <nav className="Navigation">
       <div>

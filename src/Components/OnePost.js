@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 function OnePost(props) {
 	// console.log(props);
 	let id = props.id;
-	let linkto = "OneArticle/:" + id;
+	let linkto = "OneArticle/" + id;
 
 	return (
 		<div className="Post">

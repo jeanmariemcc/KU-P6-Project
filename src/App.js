@@ -7,7 +7,7 @@ import Register from "./Components/Register";
 import Login from "./Components/Login";
 import Logout from "./Components/Logout";
 import PrivateRoute from "./Components/PrivateRoute";
-
+import OneArticle from "./Components/OneArticle";
 // import { BrowserRouter } from "react-router-dom"; //don't need this because it is in index.js
 import { Route } from "react-router-dom";
 import { Routes } from "react-router-dom";
@@ -41,6 +41,17 @@ function App(props) {
 							redirectTo="/login"
 						>
 							<Register />
+						</PrivateRoute>
+					}
+				/>
+				<Route
+					path="/OneArticle/:id"
+					element={
+						<PrivateRoute
+							isAuth={loggedIn}
+							path="OneArticle"
+						>
+							<OneArticle />
 						</PrivateRoute>
 					}
 				/>

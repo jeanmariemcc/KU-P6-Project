@@ -15,7 +15,7 @@ module.exports = {
 			.catch(next);
 		}
 
-	}
+	},
 	 
 
 	post: (req, res, next) => {
