@@ -4,6 +4,7 @@ function OnePost(props) {
 	// console.log(props);
 	let id = props.id;
 	let linkto = "OneArticle/" + id;
+	console.log(linkto);
 
 	return (
 		<div className="Post">

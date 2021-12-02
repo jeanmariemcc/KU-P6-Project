@@ -1,20 +1,23 @@
 const models = require("../models");
 
 module.exports = {
-	get:{
-		getall:(req, res, next) => {
+	get: {
+		getall: (req, res, next) => {
+			console.log(`getall ${req}`);
+			const id = req.params.id;
+			console.log(`api/controllers/articles.js getall id  ${id}`);
 			models.Articles.find()
 				.then((articles) => res.send(articles))
 				.catch(next);
 		},
 
-		getone:(req, res, next) => {
+		getone: (req, res, next) => {
 			const id = req.params.id;
+			console.log(`api/controllers/articles.js getone id  ${id}`);
 			models.Articles.findById(id)
-			.then((article) => res.send(article))
-			.catch(next);
-		}
-
+				.then((article) => res.send(article))
+				.catch(next);
+		},
 	},
 
 	post: (req, res, next) => {
