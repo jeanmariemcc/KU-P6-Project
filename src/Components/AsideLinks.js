@@ -3,7 +3,7 @@ import React from "react";
 import AsidePosts from "./AsidePosts";
 import getPosts from "../Helpers/getPosts";
 
-class AllPosts extends React.Component {
+class AsideLinks extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -63,4 +63,4 @@ class AllPosts extends React.Component {
 	}
 }
 
-export default AllPosts;
+export default AsideLinks;
