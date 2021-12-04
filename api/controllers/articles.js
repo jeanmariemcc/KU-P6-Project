@@ -10,7 +10,7 @@ module.exports = {
 				.catch(next);
 		},
 
-		getone:(req, res, next) => {
+		getone: (req, res, next) => {
 			const id = req.params.id;
 			console.log(id);
 			models.Articles.findById(id)
