@@ -1,33 +1,28 @@
 import React from "react";
-import getPosts from "../Helpers/getPosts";
+import { useParams } from "react-router-dom";
 
-function OneArticle(props){
-    let id = props.id;
-    console.log(id);
-
-    getPosts(id)
-    .then(data=>{
-        console.log(data);
-    })
-
+function OneArticle(){
+    let { id } = useParams();
+    let url = `http://localhost:9999/atlas/articles/OneArticle/${id}`;
     
-        return (
-            <main className = "Main">
-                    <img
-                        src={props.imageURL}
-                        alt="article idea"
-                        align="top"
-                        // width="500"
-                        height="80"
-                    ></img>
-                    <h1>{props.title}</h1>
-                    
-                        <h6>Updated on: {props.dateCreated} </h6>
-                    
-                    
-                    <p>{props.description}</p>
-            </main>
-        ) 
+    fetch(url).then(res=>{
+        //console.log(res);
+        return res.json();
+    })
+    .then(data =>{
+        console.log(data);
+        return(
+                <div className="Article">
+                    <h1>{data.title}</h1>
+                    <img src={data.imgURL} alt="Articleimg"/>
+                    <br />
+                    <div>{data.dateCreated}</div>
+                    <br />
+                    <p>{data.description}</p>
+                </div>  
+        )
+    });
+    
 }
 
 export default OneArticle;

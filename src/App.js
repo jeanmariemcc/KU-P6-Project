@@ -9,8 +9,7 @@ import Logout from "./Components/Logout";
 import PrivateRoute from "./Components/PrivateRoute";
 import OneArticle from "./Components/OneArticle";
 // import { BrowserRouter } from "react-router-dom"; //don't need this because it is in index.js
-import { Route } from "react-router-dom";
-import { Routes } from "react-router-dom";
+import { Route, Routes, useParams } from "react-router-dom";
 
 function App(props) {
 	const loggedIn = props.user.loggedin;
@@ -18,6 +17,7 @@ function App(props) {
 	let admin = props.user.admin;
 	console.log(loggedIn);
 	console.log(notLoggedIn);
+	console.log(props);
 
 	return (
 		<div className="App Container">
@@ -27,7 +27,20 @@ function App(props) {
 					path="/"
 					exact
 					element={<Main updateLogin={props.updateLogin} />}
-				/>
+				>
+					<Route
+						path="/OneArticle/:id"
+						element={
+							<PrivateRoute
+								isAuth={loggedIn}
+								path="OneArticle"
+								redirectTo="/"
+							>
+								<OneArticle />
+							</PrivateRoute>
+						}
+					/>
+				</Route>
 				<Route
 					path="/create"
 					element={<Create updateLogin={props.updateLogin} admin={admin} />}
@@ -44,17 +57,7 @@ function App(props) {
 						</PrivateRoute>
 					}
 				/>
-				<Route
-					path="/OneArticle/:id"
-					element={
-						<PrivateRoute
-							isAuth={loggedIn}
-							path="OneArticle"
-						>
-							<OneArticle />
-						</PrivateRoute>
-					}
-				/>
+				
 				<Route
 					path="/login"
 					element={

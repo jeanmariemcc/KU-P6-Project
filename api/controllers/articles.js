@@ -1,6 +1,8 @@
 const models = require("../models");
 
+
 module.exports = {
+	
 	get:{
 		getall:(req, res, next) => {
 			models.Articles.find()
@@ -10,8 +12,12 @@ module.exports = {
 
 		getone:(req, res, next) => {
 			const id = req.params.id;
+			console.log(id);
 			models.Articles.findById(id)
-			.then((article) => res.send(article))
+			.then((article) => {
+				console.log(article);
+				res.send(article)
+			})
 			.catch(next);
 		}
 

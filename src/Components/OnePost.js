@@ -1,11 +1,13 @@
 import { Link } from "react-router-dom";
+import OneArticle from "./OneArticle";
 
 function OnePost(props) {
 	// console.log(props);
 	let id = props.id;
 	let linkto = "OneArticle/" + id;
-
+	
 	return (
+		
 		<div className="Post">
 			<h3>{props.title}</h3>
 			<div>
@@ -20,9 +22,10 @@ function OnePost(props) {
 			></img>
 			<p>{props.description}</p>
 			<span>
-				<Link to={linkto}> [ Read the Full Article ]</Link>
+				<Link to={linkto} onClick={OneArticle()}> [ Read the Full Article ]</Link>
 			</span>
 		</div>
+		
 	);
 }
 export default OnePost;
