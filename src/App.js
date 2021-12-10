@@ -21,7 +21,7 @@ function App(props) {
 
 	return (
 		<div className="App Container">
-			<Aside updateLogin={props.updateLogin} admin={admin}/>
+			<Aside updateLogin={props.updateLogin} admin={admin} />
 			<Routes>
 				<Route
 					path="/"
@@ -29,7 +29,8 @@ function App(props) {
 					element={<Main updateLogin={props.updateLogin} />}
 				>
 					<Route
-						path="/OneArticle/:id"
+						// path="/OneArticle/:id"
+						path="/post/:id"
 						element={
 							<PrivateRoute
 								isAuth={loggedIn}
@@ -43,7 +44,9 @@ function App(props) {
 				</Route>
 				<Route
 					path="/create"
-					element={<Create updateLogin={props.updateLogin} admin={admin} />}
+					element={
+						<Create updateLogin={props.updateLogin} admin={admin} />
+					}
 				/>
 				<Route
 					path="/register"
@@ -57,7 +60,7 @@ function App(props) {
 						</PrivateRoute>
 					}
 				/>
-				
+
 				<Route
 					path="/login"
 					element={

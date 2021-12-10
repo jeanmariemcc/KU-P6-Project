@@ -27,11 +27,11 @@ class AsideLinks extends React.Component {
 	}
 
 	render() {
-		let limit;
-		if (this.props.limit !== undefined) {
-			limit = Number(this.props.limit);
-		}
-		console.log(limit);
+		// let limit;
+		// if (this.props.limit !== undefined) {
+		// 	limit = Number(this.props.limit);
+		// }
+		// console.log(limit);
 		let { posts } = this.state;
 		console.log(posts);
 		return (
