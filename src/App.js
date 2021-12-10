@@ -1,5 +1,6 @@
 import "./App.css";
-// import "./index.css";
+import React from "react";
+
 import Main from "./Components/Main";
 import Aside from "./Components/Aside";
 import Create from "./Components/Create";
@@ -60,7 +61,18 @@ function App(props) {
 						</PrivateRoute>
 					}
 				/>
+<<<<<<< Updated upstream
 
+=======
+				<Route
+					path="/OneArticle/:id"
+					element={
+						<PrivateRoute isAuth={loggedIn} path="OneArticle/:id">
+							<OneArticle />
+						</PrivateRoute>
+					}
+				/>
+>>>>>>> Stashed changes
 				<Route
 					path="/login"
 					element={
@@ -85,10 +97,7 @@ function App(props) {
 						</PrivateRoute>
 					}
 				/>
-				{/* <Route path="/allposts" exact element={<Main />} /> */}
-				{/* <Route */}
-				{/* path="/profile" */}
-				{/* element={<Profile email="test@test.com" numPosts="4" />} */}
+
 				{/* <Route path="*" exact element={<Error />} /> */}
 			</Routes>
 		</div>

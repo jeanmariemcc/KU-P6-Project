@@ -11,6 +11,7 @@ ReactDOM.render(
 	<React.StrictMode>
 		<BrowserRouter>
 			<SiteStateObj />
+			{/* SiteStateObject renders the NAV, App.js and Footer */}
 		</BrowserRouter>
 	</React.StrictMode>,
 	document.getElementById("root")
