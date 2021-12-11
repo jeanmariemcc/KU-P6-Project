@@ -1,7 +1,9 @@
 import React from "react";
-import Nav from "./Nav";
-import Footer from "./Footer";
+import Nav from "./nav/Nav";
+import Footer from "./footer/Footer";
 import App from "../App";
+import Header from "./header/Header";
+
 // ????
 
 class LoginCheck extends React.Component {
@@ -65,14 +67,17 @@ class LoginCheck extends React.Component {
 		console.log(this.state);
 		return (
 			<div>
+				<Header />
 				<Nav loggedin={this.state.loggedin} admin={this.state.admin} updateLogin={this.updateLogin} />
 
 				<App
+					loggedin={this.state.loggedin}
 					user={this.state}
+					admin={this.state.admin}
 					updateLogin={this.updateLogin}
 				/>
 
-				<Footer loggedin={this.state.loggedin} />
+				<Footer />
 			</div>
 		);
 	}
