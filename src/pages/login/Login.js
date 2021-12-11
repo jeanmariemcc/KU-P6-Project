@@ -1,5 +1,6 @@
 import React from "react";
 import loginHelper from "../../Helpers/loginHelper";
+import { Link } from "react-router-dom";
 // import LoginCheck from "./SiteStateObj";
 
 class Login extends React.Component {
@@ -83,6 +84,8 @@ class Login extends React.Component {
 						Login
 					</button>
 				</div>
+					<p>Not a member? <Link to="/register">Register here</Link></p>
+					<br />
 				</form>
 			</div>
 		);

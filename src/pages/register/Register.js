@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useState } from "react";
 import "../../index.css";
 import Aside from "../../components/aside/Aside";
@@ -120,6 +120,8 @@ function Register(props) {
 						Register
 					</button>
 				</div>
+				<p>Already a member? <Link to="/login">Login</Link></p>
+					<br />
 			</form>
 		</div>
 	);
