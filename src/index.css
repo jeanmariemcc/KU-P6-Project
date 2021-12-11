@@ -422,9 +422,9 @@ footer .listItem {
 }
 
 .singlePostImg {
-	max-width: 100%;
+	max-width: 60%;
 	height: auto;
-	margin-top: 25%;
+	margin-top: 5%;
 	border-radius: 10px;
 	object-fit: cover;
 }
