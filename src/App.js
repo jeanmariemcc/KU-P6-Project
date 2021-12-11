@@ -1,83 +1,76 @@
-import "./App.css";
 import React from "react";
 
-import Main from "./Components/Main";
-import Aside from "./Components/Aside";
-import Create from "./Components/Create";
-import Register from "./Components/Register";
-import Login from "./Components/Login";
-import Logout from "./Components/Logout";
-import PrivateRoute from "./Components/PrivateRoute";
-import OneArticle from "./Components/OneArticle";
-// import { BrowserRouter } from "react-router-dom"; //don't need this because it is in index.js
-import { Route, Routes, useParams } from "react-router-dom";
+import Home from "./pages/home/Home";
+import Single from "./pages/single/Single";
+import Create from "./pages/create/Create";
+import { Route, Routes } from "react-router-dom";
+import Register from "./pages/register/Register";
+import Login from "./pages/login/Login";
+import Logout from "./pages/Logout";
+import PrivateRoute from "./components/PrivateRoute";
 
 function App(props) {
-	const loggedIn = props.user.loggedin;
-	const notLoggedIn = !props.user.loggedin;
-	let admin = props.user.admin;
-	console.log(loggedIn);
-	console.log(notLoggedIn);
-	console.log(props);
+	const loggedIn = props.loggedin;
+	const loggedOut = !props.loggedin;
 
+	let admin = props.admin;
 	return (
 		<div className="App Container">
-			<Aside updateLogin={props.updateLogin} admin={admin} />
 			<Routes>
-				<Route
-					path="/"
-					exact
-					element={<Main updateLogin={props.updateLogin} />}
-				>
-					<Route
-						// path="/OneArticle/:id"
-						path="/post/:id"
-						element={
-							<PrivateRoute
-								isAuth={loggedIn}
-								path="OneArticle"
-								redirectTo="/"
-							>
-								<OneArticle />
-							</PrivateRoute>
-						}
-					/>
-				</Route>
+				<Route path="/" exact element={<Home />} />
+
 				<Route
 					path="/create"
 					element={
-						<Create updateLogin={props.updateLogin} admin={admin} />
+						<PrivateRoute
+							isAuth={loggedIn}
+							admin={admin}
+							path="create"
+							redirectTo="/"
+						>
+							<Create
+								updateLogin={props.updateLogin}
+								admin={admin}
+							/>
+						</PrivateRoute>
 					}
 				/>
+
 				<Route
-					path="/register"
+					path="/post/:id"
 					element={
 						<PrivateRoute
-							isAuth={notLoggedIn}
+							isAuth={loggedIn}
+							admin={admin}
+							path="post"
+							redirectTo="/login"
+						>
+							<Single
+								updateLogin={props.updateLogin}
+								admin={admin}
+							/>
+						</PrivateRoute>
+					}
+				/>
+
+				<Route
+					path="register"
+					element={
+						<PrivateRoute
+							isAuth={loggedOut}
 							path="register"
 							redirectTo="/login"
 						>
-							<Register />
+							<Register updateLogin={props.updateLogin} />
 						</PrivateRoute>
 					}
 				/>
-<<<<<<< Updated upstream
 
-=======
 				<Route
-					path="/OneArticle/:id"
-					element={
-						<PrivateRoute isAuth={loggedIn} path="OneArticle/:id">
-							<OneArticle />
-						</PrivateRoute>
-					}
-				/>
->>>>>>> Stashed changes
-				<Route
-					path="/login"
+					path="login"
 					element={
 						<PrivateRoute
-							isAuth={notLoggedIn}
+							isAuth={loggedOut}
 							path="login"
 							redirectTo="/"
 						>
@@ -85,8 +78,9 @@ function App(props) {
 						</PrivateRoute>
 					}
 				/>
+
 				<Route
-					path="/logout"
+					path="logout"
 					element={
 						<PrivateRoute
 							isAuth={loggedIn}
@@ -97,11 +91,8 @@ function App(props) {
 						</PrivateRoute>
 					}
 				/>
-
-				{/* <Route path="*" exact element={<Error />} /> */}
 			</Routes>
 		</div>
 	);
 }
-
 export default App;

@@ -19,4 +19,5 @@ function sendPost(description, title, imageURL, dateCreated) {
 
 	return fetch(url, resources).then((res) => res.json());
 }
+
 export default sendPost;
