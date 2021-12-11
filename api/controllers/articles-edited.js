@@ -1,29 +1,27 @@
 const models = require("../models");
 
 module.exports = {
-	get:{
-		getall:(req, res, next) => {
+	get: {
+		getall: (req, res, next) => {
 			models.Articles.find()
 				.then((articles) => res.send(articles))
 				.catch(next);
 		},
 
-		getone:(req, res, next) => {
+		getone: (req, res, next) => {
 			const id = req.params.id;
 			models.Articles.findById(id)
-			.then((article) => res.send(article))
-			.catch(next);
-		}
-
+				.then((article) => res.send(article))
+				.catch(next);
+		},
 	},
-	 
 
 	post: (req, res, next) => {
 		const dateCreated = new Date().toLocaleDateString();
 		const { description, title, imageURL } = req.body;
-		console.log(req.body);
+		// console.log(req.body);
 
-		console.log(`articles.js dateCreated ${dateCreated}`);
+		// console.log(`articles.js dateCreated ${dateCreated}`);
 
 		models.Articles.create({ description, imageURL, title, dateCreated })
 			.then((createdArticle) => res.send(createdArticle))

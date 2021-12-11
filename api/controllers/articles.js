@@ -10,10 +10,10 @@ module.exports = {
 
 		getone: (req, res, next) => {
 			const id = req.params.id;
-			console.log(`getone line 13 id ${id}`);
+			// console.log(`getone line 13 id ${id}`);
 			models.Articles.findById(id)
 				.then((article) => {
-					console.log(article);
+					// console.log(article);
 					res.send(article);
 				})
 				.catch(next);
@@ -23,9 +23,9 @@ module.exports = {
 	post: (req, res, next) => {
 		const dateCreated = new Date().toLocaleDateString();
 		const { description, title, imageURL } = req.body;
-		console.log(req.body);
+		// console.log(req.body);
 
-		console.log(`articles.js dateCreated ${dateCreated}`);
+		// console.log(`articles.js dateCreated ${dateCreated}`);
 
 		models.Articles.create({ description, imageURL, title, dateCreated })
 			.then((createdArticle) => res.send(createdArticle))
